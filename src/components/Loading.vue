@@ -43,16 +43,9 @@ export default class UsersList extends Vue {}
   right: 0px;
   bottom: 0px;
   z-index: 10;
-  display: box;
-  display: -o-box;
-  display: -ms-box;
-  display: -webkit-box;
-  display: -moz-box;
+
   display: flex;
-  display: -o-flex;
-  display: -ms-flex;
-  display: -webkit-flex;
-  display: -moz-flex;
+
   box-pack: center;
   -o-box-pack: center;
   -ms-box-pack: center;
