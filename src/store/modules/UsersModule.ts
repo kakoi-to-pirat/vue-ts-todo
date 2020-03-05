@@ -1,8 +1,8 @@
 import { State, Mutation, Action, Getter } from 'vuex-simple';
 import UserModel from '@/models/UserModel';
-import HTTP from '../http-common';
+import HTTP from '../../http-common';
 
-export class UsersStore {
+export class UsersModule {
   @State()
   private _users: UserModel[] = [];
 

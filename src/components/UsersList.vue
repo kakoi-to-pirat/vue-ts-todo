@@ -55,10 +55,17 @@ import Loading from '@/components/Loading.vue';
 import Pagination from '@/components/Pagination.vue';
 import UserModel from '@/models/UserModel';
 
+import { useStore, useModule } from 'vuex-simple';
+import { Store } from '@/store/Store';
+import { UsersModule } from '@/store/modules/UsersModule';
+
 @Component({
   components: { Loading, Pagination },
 })
 export default class UsersList extends Vue {
+  public store: Store = useStore(this.$store);
+  public usersModule?: UsersModule = useModule(this.$store, ['users']);
+
   private isLoadingData = false;
 
   private users: UserModel[] = [];
@@ -71,24 +78,24 @@ export default class UsersList extends Vue {
   }
 
   onChangePage(page: number): void {
-    this.$store.commit('setUsersPage', page);
+    this.store.users.setUsersPage(page);
     this.loadUsers();
   }
 
   async loadUsers() {
     this.isLoadingData = true;
 
-    await this.$store.dispatch('loadUsers');
+    await this.store.users.loadUsers();
     this.updateUsersData();
 
     this.isLoadingData = false;
   }
 
   updateUsersData() {
-    this.users = this.$store.getters.users;
-    this.usersPage = this.$store.getters.usersPage;
-    this.usersLimit = this.$store.getters.usersLimit;
-    this.usersTotal = this.$store.getters.usersTotalCount;
+    this.users = this.store.users.users;
+    this.usersPage = this.store.users.usersPage;
+    this.usersLimit = this.store.users.usersLimit;
+    this.usersTotal = this.store.users.usersTotalCount;
   }
 
   onClickToUser(user: UserModel): void {
