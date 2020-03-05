@@ -77,7 +77,6 @@ export class UsersStore {
 
       return data;
     } catch (error) {
-      console.log({ error }); // eslint-disable-line no-console
       return [];
     }
   }
