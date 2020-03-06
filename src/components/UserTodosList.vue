@@ -9,11 +9,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 import Loading from '@/components/Loading.vue';
-import UserTodoModel from '@/models/UserTodoModel';
+// import UserTodoModel from '@/models/UserTodoModel';
 
-@Component({})
+@Component({
+  components: { Loading },
+})
 export default class UserTodosList extends Vue {
-  private isLoadingData = false;
-  mounted() { }
+  isLoadingData = false;
 }
 </script>

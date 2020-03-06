@@ -63,15 +63,15 @@ import { UsersModule } from '@/store/modules/UsersModule';
   components: { Loading, Pagination },
 })
 export default class UsersList extends Vue {
-  public store: Store = useStore(this.$store);
-  public usersModule?: UsersModule = useModule(this.$store, ['users']);
+  store: Store = useStore(this.$store);
+  usersModule?: UsersModule = useModule(this.$store, ['users']);
 
-  private isLoadingData = false;
+  isLoadingData = false;
 
-  private users: UserModel[] = [];
-  private usersPage = 1;
-  private usersLimit = 1;
-  private usersTotal = 0;
+  users: UserModel[] = [];
+  usersPage = 1;
+  usersLimit = 1;
+  usersTotal = 0;
 
   mounted() {
     this.loadUsers();
