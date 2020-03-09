@@ -15,6 +15,8 @@ import { Module } from '@vue-ioc/core';
 import { PaginationService } from '@/services/PaginationService';
 import Users from './views/Users.vue';
 
+import '@/assets/usersList.css';
+
 @Module({
   providers: [PaginationService],
 })

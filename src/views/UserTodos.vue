@@ -1,6 +1,10 @@
 <template>
   <div class="roles">
     <h1>UserTodos</h1>
+    <user-todos-list />
+    <div class="roles__bar">
+      <router-link to="/">Back to users</router-link>
+    </div>
   </div>
 </template>
 
@@ -13,3 +17,11 @@ import UserTodosList from '@/components/UserTodosList.vue';
 })
 export default class UserTodos extends Vue {}
 </script>
+
+<style>
+.roles__bar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 85px;
+}
+</style>

@@ -6,17 +6,9 @@ export class UserTodosModule {
   @State()
   private _userTodos: UserTodoModel[] = [];
 
-  @State()
-  private _userId?: number;
-
   @Mutation()
   public setUserTodos(userTodos: UserTodoModel[]): void {
     this._userTodos = userTodos;
-  }
-
-  @Mutation()
-  public setUserId(userId: number): void {
-    this._userId = userId;
   }
 
   @Getter()
@@ -25,9 +17,9 @@ export class UserTodosModule {
   }
 
   @Action()
-  public async loadUserTodos(): Promise<UserTodoModel[]> {
+  public async loadUserTodos(userId: number): Promise<UserTodoModel[]> {
     try {
-      const { data } = await HTTP.get(`todos?userId=${this._userId}`);
+      const { data } = await HTTP.get(`todos?userId=${userId}`);
       this.setUserTodos(data);
       return data;
     } catch (error) {

@@ -99,36 +99,9 @@ export default class UsersList extends Vue {
   }
 
   onClickToUser(user: UserModel): void {
-    console.log(user);
+    this.$router.push(`/user-todos/${user.id}`);
   }
 }
 </script>
 
-<style>
-.users-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.users-list__bar {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 20px 85px;
-}
-.users-list__table {
-  max-width: 1730px;
-  margin: 0 85px;
-}
-.users-list__header {
-  font-size: 1.2rem;
-  padding: 8px;
-}
-.users-list__item {
-  cursor: pointer;
-  color: #4c4c4c;
-  padding: 8px;
-  text-align: left;
-}
-</style>
+<style></style>
