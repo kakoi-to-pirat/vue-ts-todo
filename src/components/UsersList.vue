@@ -85,10 +85,15 @@ export default class UsersList extends Vue {
   async loadUsers() {
     this.isLoadingData = true;
 
-    await this.store.users.loadUsers();
-    this.updateUsersData();
+    try {
+      await this.store.users.loadUsers();
+      this.updateUsersData();
 
-    this.isLoadingData = false;
+      this.isLoadingData = false;
+    } catch (error) {
+      this.isLoadingData = false;
+      throw error;
+    }
   }
 
   updateUsersData() {

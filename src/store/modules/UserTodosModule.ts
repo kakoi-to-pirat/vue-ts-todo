@@ -18,12 +18,8 @@ export class UserTodosModule {
 
   @Action()
   public async loadUserTodos(userId: number): Promise<UserTodoModel[]> {
-    try {
-      const { data } = await HTTP.get(`todos?userId=${userId}`);
-      this.setUserTodos(data);
-      return data;
-    } catch (error) {
-      return [];
-    }
+    const { data } = await HTTP.get(`todos?userId=${userId}`);
+    this.setUserTodos(data);
+    return data;
   }
 }

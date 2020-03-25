@@ -50,10 +50,16 @@ export default class UserTodosList extends Vue {
     this.isLoadingData = true;
 
     const userId = parseInt(this.$route.params.id);
-    await this.store.userTodos.loadUserTodos(userId);
-    this.updateUsersData();
 
-    this.isLoadingData = false;
+    try {
+      await this.store.userTodos.loadUserTodos(userId);
+      this.updateUsersData();
+
+      this.isLoadingData = false;
+    } catch (error) {
+      this.isLoadingData = false;
+      throw error;
+    }
   }
 
   updateUsersData() {

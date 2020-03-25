@@ -67,17 +67,11 @@ export class UsersModule {
   public async loadUsers(): Promise<UserModel[]> {
     this.updateUsersQueryParams();
 
-    try {
-      const { data, headers } = await HTTP.get(
-        `users${this._usersQueryParams}`,
-      );
+    const { data, headers } = await HTTP.get(`users${this._usersQueryParams}`);
 
-      this.setUsers(data);
-      this.setUsersTotalCount(Number(headers['x-total-count']));
+    this.setUsers(data);
+    this.setUsersTotalCount(Number(headers['x-total-count']));
 
-      return data;
-    } catch (error) {
-      return [];
-    }
+    return data;
   }
 }
