@@ -6,9 +6,10 @@ node_js:
 
 script:
   - npm run lint
+  - npm run build
 
 env:
-  VUE_APP_API_URL=https://jsonplaceholder.typicode.com/
+  VUE_APP_API_URL="https://jsonplaceholder.typicode.com/"
 
 branches:
   only:
