@@ -1,4 +1,7 @@
 sudo: false
+env:
+  DEPLOY_TO=github-pages
+  VUE_APP_API_URL="https://jsonplaceholder.typicode.com/"
 
 language: node_js
 node_js:
@@ -11,22 +14,17 @@ script:
   - npm run lint
   - npm run build
 
-env:
-  - DEPLOY_TO=github-pages
-  - VUE_APP_API_URL="https://jsonplaceholder.typicode.com/"
-
 branches:
   only:
     - master
 
-# deploy to GitHub Pages
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
-  on:
-    branch: master
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: dist
+    on:
+      branch: master
 #
 # deploy to Heroku
 # deploy:
