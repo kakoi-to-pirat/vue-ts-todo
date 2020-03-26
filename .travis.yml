@@ -12,7 +12,7 @@ script:
   - npm run build
 
 env:
-  - NODE_ENV=prod
+  - DEPLOY_TO=github-pages
   - VUE_APP_API_URL="https://jsonplaceholder.typicode.com/"
 
 branches:
