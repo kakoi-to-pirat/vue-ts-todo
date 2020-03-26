@@ -4,12 +4,16 @@ language: node_js
 node_js:
   - 10.16.0
 
+install:
+  - npm ci
+
 script:
+  - npm run lint
   - npm run build
 
 env:
-  - NODE_ENV=production
-  - VUE_APP_API_URL=https://jsonplaceholder.typicode.com/
+  - NODE_ENV=prod
+  - VUE_APP_API_URL="https://jsonplaceholder.typicode.com/"
 
 branches:
   only:
