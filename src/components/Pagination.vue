@@ -58,7 +58,7 @@ export default class Pagination extends Vue {
 }
 </script>
 
-<style>
+<style scoped>
 .pagination__total {
   margin-right: 15px;
 }

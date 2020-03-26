@@ -18,7 +18,7 @@ import UserTodosList from '@/components/UserTodosList.vue';
 export default class UserTodos extends Vue {}
 </script>
 
-<style>
+<style scoped>
 .roles__bar {
   display: flex;
   justify-content: flex-end;

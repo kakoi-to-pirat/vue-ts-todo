@@ -109,4 +109,4 @@ export default class UsersList extends Vue {
 }
 </script>
 
-<style></style>
+<style scoped></style>

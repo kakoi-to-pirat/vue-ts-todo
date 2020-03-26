@@ -22,7 +22,7 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class UsersList extends Vue {}
 </script>
 
-<style>
+<style scoped>
 .loading {
   position: fixed;
   background-color: #e2e2e2c7;
