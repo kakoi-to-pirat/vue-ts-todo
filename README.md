@@ -1,5 +1,3 @@
-Demo: https://safe-brook-41737.herokuapp.com/
-
 ## Project setup
 ```
 npm install
