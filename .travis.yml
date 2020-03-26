@@ -4,18 +4,35 @@ language: node_js
 node_js:
   - 10.16.0
 
+install:
+  - npm ci
+
 script:
   - npm run lint
 
+after-script:
+  - npm run build
+
 env:
-  VUE_APP_API_URL="https://jsonplaceholder.typicode.com/"
+  - NODE_ENV=production
+  - VUE_APP_API_URL=https://jsonplaceholder.typicode.com/
 
 branches:
   only:
     - master
 
+# deploy to GitHub Pages
 deploy:
-  provider: heroku
-  app: "pirate-demo"
-  api_key:
-    secure: "533b1219-f078-4c2c-b85f-385aed8bc250"
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  on:
+    branch: master
+#
+# deploy to Heroku
+# deploy:
+#   provider: heroku
+#   app: "pirate-demo"
+#   api_key:
+#     secure: "533b1219-f078-4c2c-b85f-385aed8bc250"
