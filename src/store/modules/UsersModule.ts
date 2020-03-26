@@ -2,6 +2,8 @@ import { State, Mutation, Action, Getter } from 'vuex-simple';
 import UserModel from '@/models/UserModel';
 import HTTP from '../../http-common';
 
+import { StaticUsers } from '../StaticData';
+
 export class UsersModule {
   @State()
   private _users: UserModel[] = [];
@@ -67,11 +69,20 @@ export class UsersModule {
   public async loadUsers(): Promise<UserModel[]> {
     this.updateUsersQueryParams();
 
-    const { data, headers } = await HTTP.get(`users${this._usersQueryParams}`);
+    try {
+      const { data, headers } = await HTTP.get(
+        `users${this._usersQueryParams}`,
+      );
 
-    this.setUsers(data);
-    this.setUsersTotalCount(Number(headers['x-total-count']));
+      this.setUsers(data);
+      this.setUsersTotalCount(Number(headers['x-total-count']));
 
-    return data;
+      return data;
+    } catch (error) {
+      this.setUsers(StaticUsers);
+      this.setUsersTotalCount(StaticUsers.length);
+
+      throw error;
+    }
   }
 }

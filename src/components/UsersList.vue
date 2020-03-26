@@ -90,9 +90,9 @@ export default class UsersList extends Vue {
     try {
       await this.store.users.loadUsers();
       this.updateUsersData();
-
       this.isLoadingData = false;
     } catch (error) {
+      this.updateUsersData();
       this.isLoadingData = false;
       throw error;
     }
