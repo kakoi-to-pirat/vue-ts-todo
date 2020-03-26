@@ -7,7 +7,7 @@ cache: npm
 
 script:
   - npm install
-  - npm run build
+  - npx vue-cli-service build
 
 env:
   - NODE_ENV=production
