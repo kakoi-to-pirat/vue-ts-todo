@@ -1,5 +1,5 @@
 <template>
-  <div class="about" style="width: 600px; margin: auto;">
+  <div class="about">
     <h1>What is this?</h1>
     <p>
       This is a demo project to illustrate the vue and typescript. Here I have
@@ -7,3 +7,10 @@
     </p>
   </div>
 </template>
+
+<style scoped>
+.about {
+  width: 600px;
+  margin: auto;
+}
+</style>

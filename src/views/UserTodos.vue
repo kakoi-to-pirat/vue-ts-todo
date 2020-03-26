@@ -1,8 +1,8 @@
 <template>
-  <div class="roles">
+  <div class="user-todos">
     <h1>UserTodos</h1>
     <user-todos-list />
-    <div class="roles__bar">
+    <div class="user-todos__navbar">
       <router-link to="/">Back to users</router-link>
     </div>
   </div>
@@ -19,7 +19,7 @@ export default class UserTodos extends Vue {}
 </script>
 
 <style scoped>
-.roles__bar {
+.user-todos__navbar {
   display: flex;
   justify-content: flex-end;
   margin: 0 85px;

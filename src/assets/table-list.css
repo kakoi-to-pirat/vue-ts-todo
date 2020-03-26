@@ -1,24 +1,24 @@
-.users-list {
+.table-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.users-list__bar {
+.table-list__bar {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 20px 85px;
 }
-.users-list__table {
+.table-list__table {
   max-width: 1730px;
   margin: 0 85px;
 }
-.users-list__header {
+.table-list__header {
   font-size: 1.2rem;
   padding: 8px;
 }
-.users-list__item {
+.table-list__item {
   cursor: pointer;
   color: #4c4c4c;
   padding: 8px;

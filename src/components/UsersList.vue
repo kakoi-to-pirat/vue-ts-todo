@@ -1,16 +1,16 @@
 <template>
-  <div class="users-list">
+  <div class="table-list">
     <loading v-if="isLoadingData" />
 
-    <table border="1" class="users-list__table">
+    <table border="1" class="table-list__table">
       <tr>
-        <th class="users-list__header">Name</th>
-        <th class="users-list__header">Username</th>
-        <th class="users-list__header">Email</th>
-        <th class="users-list__header">Phone</th>
-        <th class="users-list__header">Website</th>
-        <th class="users-list__header">Company</th>
-        <th class="users-list__header">Address</th>
+        <th class="table-list__header">Name</th>
+        <th class="table-list__header">Username</th>
+        <th class="table-list__header">Email</th>
+        <th class="table-list__header">Phone</th>
+        <th class="table-list__header">Website</th>
+        <th class="table-list__header">Company</th>
+        <th class="table-list__header">Address</th>
       </tr>
 
       <tr
@@ -18,19 +18,19 @@
         :key="`user-${user.id}`"
         @click="onClickToUser(user)"
       >
-        <th class="users-list__item">{{ user.name }}</th>
-        <th class="users-list__item">{{ user.username }}</th>
-        <th class="users-list__item">{{ user.email }}</th>
-        <th class="users-list__item">{{ user.phone }}</th>
-        <th class="users-list__item">{{ user.website }}</th>
+        <th class="table-list__item">{{ user.name }}</th>
+        <th class="table-list__item">{{ user.username }}</th>
+        <th class="table-list__item">{{ user.email }}</th>
+        <th class="table-list__item">{{ user.phone }}</th>
+        <th class="table-list__item">{{ user.website }}</th>
 
-        <th class="users-list__item">
+        <th class="table-list__item">
           Name: {{ user.company.name }} <br />
           CatchPhrase: {{ user.company.catchPhrase }} <br />
           BS: {{ user.company.bs }} <br />
         </th>
 
-        <th class="users-list__item">
+        <th class="table-list__item">
           {{ user.address.street }}, {{ user.address.suite }},
           {{ user.address.zipcode }}, {{ user.address.geo.lat }}
           {{ user.address.geo.lng }}
@@ -38,7 +38,7 @@
       </tr>
     </table>
 
-    <div class="users-list__bar">
+    <div class="table-list__bar">
       <pagination
         :page="usersPage"
         :limit="usersLimit"
@@ -58,6 +58,8 @@ import UserModel from '@/models/UserModel';
 import { useStore, useModule } from 'vuex-simple';
 import { Store } from '@/store/Store';
 import { UsersModule } from '@/store/modules/UsersModule';
+
+import '@/assets/table-list.css';
 
 @Component({
   components: { Loading, Pagination },

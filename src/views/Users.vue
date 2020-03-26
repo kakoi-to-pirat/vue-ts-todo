@@ -1,5 +1,5 @@
 <template>
-  <div class="roles">
+  <div class="users">
     <h1>Users</h1>
     <users-list />
   </div>

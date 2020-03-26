@@ -1,20 +1,20 @@
 <template>
-  <div class="users-list">
+  <div class="table-list">
     <loading v-if="isLoadingData" />
 
-    <table border="1" class="users-list__table">
+    <table border="1" class="table-list__table">
       <tr>
-        <th class="users-list__header">UserId</th>
-        <th class="users-list__header">TodoId</th>
-        <th class="users-list__header">Title</th>
-        <th class="users-list__header">Completed</th>
+        <th class="table-list__header">UserId</th>
+        <th class="table-list__header">TodoId</th>
+        <th class="table-list__header">Title</th>
+        <th class="table-list__header">Completed</th>
       </tr>
 
       <tr v-for="todo in userTodos" :key="`todo-${todo.id}`">
-        <th class="users-list__item">{{ todo.userId }}</th>
-        <th class="users-list__item">{{ todo.id }}</th>
-        <th class="users-list__item">{{ todo.title }}</th>
-        <th class="users-list__item">{{ getStatus(todo) }}</th>
+        <th class="table-list__item">{{ todo.userId }}</th>
+        <th class="table-list__item">{{ todo.id }}</th>
+        <th class="table-list__item">{{ todo.title }}</th>
+        <th class="table-list__item">{{ getStatus(todo) }}</th>
       </tr>
     </table>
   </div>
@@ -30,6 +30,8 @@ import UserTodoModel from '@/models/UserTodoModel';
 import { useStore, useModule } from 'vuex-simple';
 import { Store } from '@/store/Store';
 import { UserTodosModule } from '@/store/modules/UserTodosModule';
+
+import '@/assets/table-list.css';
 
 @Component({
   components: { Loading },
