@@ -4,12 +4,10 @@
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
-    "clean": "rm -rf build",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint",
-    "deploy": "npm run clean && npm install && npm run build"
+    "lint": "vue-cli-service lint"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
