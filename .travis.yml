@@ -3,6 +3,8 @@ language: node_js
     - "node"
   cache: npm
   script: npm run build
+  env:
+    - NODE_ENV=production
   deploy:
     provider: pages
     skip_cleanup: true
