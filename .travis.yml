@@ -9,13 +9,11 @@ install:
 
 script:
   - npm run lint
-
-after-script:
   - npm run build
 
 env:
-  - NODE_ENV=production
-  - VUE_APP_API_URL=https://jsonplaceholder.typicode.com/
+  - NODE_ENV=prod
+  - VUE_APP_API_URL="https://jsonplaceholder.typicode.com/"
 
 branches:
   only:

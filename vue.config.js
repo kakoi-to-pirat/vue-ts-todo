@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-ts-todo/' : '/',
+  publicPath: process.env.NODE_ENV === 'prod' ? '/vue-ts-todo/' : '/',
 };
