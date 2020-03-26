@@ -6,7 +6,7 @@ node_js:
 cache: npm
 
 script:
-  -npm run deploy
+  - npm run deploy
 
 env:
   - NODE_ENV=production
