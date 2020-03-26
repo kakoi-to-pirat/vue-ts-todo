@@ -19,4 +19,4 @@ deploy:
   provider: heroku
   app: "pirate-demo"
   api_key:
-    secure: "3fad0554-9abe-49c2-a064-8e66089c666e"
+    secure: "533b1219-f078-4c2c-b85f-385aed8bc250"
