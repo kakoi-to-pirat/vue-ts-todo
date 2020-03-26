@@ -1,22 +1,15 @@
+sudo: false
+
 language: node_js
-
 node_js:
-  - 12
+  - 10.16.0
 
-cache: npm
-
-script:
-  - npm install
-  - npm ci
-  - npx vue-cli-service build
-
-env:
-  - NODE_ENV=production
+branches:
+  only:
+    - master
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
-  on:
-    branch: master
+  provider: heroku
+  app: "pirate-demo"
+  api_key:
+    secure: "51902b05-37ac-4229-8ffb-6f227dc2f3f4"

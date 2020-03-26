@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
@@ -20,6 +21,7 @@
     ]
   },
   "dependencies": {
+    "express": "^4.17.1",
     "@types/lodash": "^4.14.149",
     "@vue-ioc/core": "^0.1.2",
     "axios": "^0.19.2",
