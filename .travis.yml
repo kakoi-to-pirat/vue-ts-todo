@@ -4,6 +4,12 @@ language: node_js
 node_js:
   - 10.16.0
 
+script:
+  - npm run lint
+
+env:
+  VUE_APP_API_URL=https://jsonplaceholder.typicode.com/
+
 branches:
   only:
     - master
@@ -12,4 +18,4 @@ deploy:
   provider: heroku
   app: "pirate-demo"
   api_key:
-    secure: "51902b05-37ac-4229-8ffb-6f227dc2f3f4"
+    secure: "ee66975d-0155-4652-ba45-435fd67d8e4d"
