@@ -3,7 +3,8 @@
     <h1>What is this?</h1>
     <p>
       This is a demo project to illustrate the vue and typescript. Here I have
-      implemented ioc-pattern, layered architecture, strict of typical.
+      implemented ioc-pattern, layered architecture, strict of typical. This
+      project also shows how to work with trees.
     </p>
   </div>
 </template>

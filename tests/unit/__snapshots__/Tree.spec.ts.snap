@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tree.vue shold match the snapshot 1`] = `
+<div class="tree">
+  <div class="tree__data">
+    <h3>Source:</h3>
+    <ul class="tree-list">
+      <li class="tree-list__item"><span>id: 5,  parentId: 0,  name: Management,  isApprove: true, </span>
+        <!---->
+      </li>
+      <li class="tree-list__item"><span>id: 2,  parentId: 3,  name: Complete Removal,  isApprove: true, </span>
+        <!---->
+      </li>
+      <li class="tree-list__item"><span>id: 4,  parentId: 5,  name: Modify,  isApprove: true, </span>
+        <!---->
+      </li>
+      <li class="tree-list__item"><span>id: 3,  parentId: 4,  name: Removal,  isApprove: false, </span>
+        <!---->
+      </li>
+      <li class="tree-list__item"><span>id: 113,  name: Preview,  isApprove: false, </span>
+        <!---->
+      </li>
+      <li class="tree-list__item"><span>id: 112,  parentId: 4,  name: Edit,  isApprove: true, </span>
+        <!---->
+      </li>
+      <li class="tree-list__item"><span>id: 110,  parentId: 4,  name: Add,  isApprove: true, </span>
+        <!---->
+      </li>
+    </ul>
+    <h3>Result:</h3>
+    <ul class="tree-list">
+      <li class="tree-list__item"><span>id: 5,  parentId: 0,  name: Management,  isApprove: true,  children: [object Object], </span>
+        <ul class="tree-list">
+          <li class="tree-list__item"><span>id: 4,  parentId: 5,  name: Modify,  isApprove: true,  children: [object Object],[object Object],[object Object], </span>
+            <ul class="tree-list">
+              <li class="tree-list__item"><span>id: 3,  parentId: 4,  name: Removal,  isApprove: false,  children: [object Object], </span>
+                <ul class="tree-list">
+                  <li class="tree-list__item"><span>id: 2,  parentId: 3,  name: Complete Removal,  isApprove: true, </span>
+                    <!---->
+                  </li>
+                </ul>
+              </li>
+              <li class="tree-list__item"><span>id: 112,  parentId: 4,  name: Edit,  isApprove: true, </span>
+                <!---->
+              </li>
+              <li class="tree-list__item"><span>id: 110,  parentId: 4,  name: Add,  isApprove: true, </span>
+                <!---->
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="tree-list__item"><span>id: 113,  name: Preview,  isApprove: false, </span>
+        <!---->
+      </li>
+    </ul>
+  </div>
+  <div class="tree__actions">
+    <h3>Editable:</h3>
+    <ul class="tree__actions-list">
+      <ul class="tree-list">
+        <li class="tree-list__item"><span><input type="checkbox">
+      Management
+    </span>
+          <ul class="tree-list">
+            <li class="tree-list__item"><span><input type="checkbox">
+      Modify
+    </span>
+              <ul class="tree-list">
+                <li class="tree-list__item"><span><input type="checkbox">
+      Removal
+    </span>
+                  <ul class="tree-list">
+                    <li class="tree-list__item"><span><input type="checkbox">
+      Complete Removal
+    </span>
+                      <!---->
+                    </li>
+                  </ul>
+                </li>
+                <li class="tree-list__item"><span><input type="checkbox">
+      Edit
+    </span>
+                  <!---->
+                </li>
+                <li class="tree-list__item"><span><input type="checkbox">
+      Add
+    </span>
+                  <!---->
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="tree-list__item"><span><input type="checkbox">
+      Preview
+    </span>
+          <!---->
+        </li>
+      </ul>
+    </ul>
+  </div>
+</div>
+`;

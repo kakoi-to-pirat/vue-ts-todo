@@ -1,5 +1,5 @@
 import { Module } from 'vuex-simple';
-import { UsersModule, UserTodosModule } from './modules';
+import { UsersModule, UserTodosModule, UsersRolesStore } from './modules';
 
 export class Store {
   @Module()
@@ -7,4 +7,7 @@ export class Store {
 
   @Module()
   public userTodos = new UserTodosModule();
+
+  @Module()
+  public userRoles = new UsersRolesStore();
 }

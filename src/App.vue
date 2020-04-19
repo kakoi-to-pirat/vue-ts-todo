@@ -2,6 +2,7 @@
   <div class="app">
     <div class="app__navbar">
       <router-link to="/">Users</router-link> |
+      <router-link to="/roles">Roles</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
@@ -13,10 +14,11 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Module } from '@vue-ioc/core';
 import { PaginationService } from '@/services/PaginationService';
+import { TreeService } from '@/services/TreeService';
 import Users from './views/Users.vue';
 
 @Module({
-  providers: [PaginationService],
+  providers: [PaginationService, TreeService],
 })
 @Component({
   components: { Users },
