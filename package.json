@@ -21,7 +21,7 @@
     ]
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "@types/lodash": "^4.14.149",
     "@vue-ioc/core": "^0.1.2",
     "axios": "^0.21.2",
